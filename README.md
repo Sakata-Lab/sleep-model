@@ -1,5 +1,5 @@
 # sleep-model
-Python scripts for Herice and Sakata
+Python scripts for Herice and Sakata (2019).
 
 Citation information:
 Pathway-dependent regulation of sleep dynamics in a network model of the sleep-wake cycle
