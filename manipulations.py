@@ -6,16 +6,12 @@ Main file for the computational model Herice C. and Sakata S. (2019)
 Sleep/wake regulation model and synapses alterations.
 Original model from Costa et al. (2016) and Diniz Behn et al. (2012).
 
-Charlotte HERICE - January 2019
+Charlotte HERICE AND SHUZO SAKATA - NOVEMBER 2019
 """
 
-"""
-modifed from main.py to do comprehensive manipulations
-"""
 
 import os
 import sleepCompModel
-import sleepPlot
 import numpy as np
 
 # os.path.join()
@@ -28,7 +24,7 @@ toShow = "n"
 
 
 
-# default
+# default params
 g_RRe = 1.6
 g_RWe = 1.0
 g_WNi = -2.0
@@ -41,7 +37,7 @@ Ratios = np.array([0, 1/8, 1/4, 1/2, 1, 2, 4, 8])
 # core - REM
 dirName = "REM"
 
-for simNumber in range(5, nbSims+1):
+for simNumber in range(1, nbSims):
 	ctr1 = 0
 	for i in Ratios:
 		ctr1 += 1
@@ -52,12 +48,11 @@ for simNumber in range(5, nbSims+1):
 			print(alterationSite)
 
 			sleepCompModel.RunSim(simDuration, simNumber, alterationSite, dirName, g_RRe*i, g_RWe*j, g_WNi, g_WRi, g_NRi, g_NWi) 
-		# sleepPlot.SleepPlots(simDuration, dirName, simNumber, alterationSite, alterationTitle, toShow)
 
 # core - AW
 dirName = "AW"
 
-for simNumber in range(2, nbSims+1):
+for simNumber in range(1, nbSims):
 	ctr1 = 0
 	for i in Ratios:
 		ctr1 += 1
@@ -72,7 +67,7 @@ for simNumber in range(2, nbSims+1):
 # core - NREM
 dirName = "NREM"
 
-for simNumber in range(2, nbSims+1):
+for simNumber in range(1, nbSims):
 	ctr1 = 0
 	for i in Ratios:
 		ctr1 += 1
